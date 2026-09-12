@@ -1,0 +1,27 @@
+# Python
+.venv/
+.venv312/
+*.pyc
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Secrets
+.env
+.env.*
+.streamlit/secrets.toml
+
+# Dataset dan model tiap project
+**/data/raw/**
+**/data/processed/**
+!**/data/raw/.gitkeep
+!**/data/processed/.gitkeep
+**/models/
+mlflow.db*
+mlruns/
+mlartifacts/
+
+# Hasil prediksi lokal
+customer_churn_predictions.csv
+house_price_prediction/data/processed_notebook/
+house_price_prediction/models/

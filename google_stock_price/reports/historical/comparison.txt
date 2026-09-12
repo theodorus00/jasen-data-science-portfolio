@@ -1,0 +1,19 @@
+================================================================================
+RINGKASAN PERBANDINGAN 3 KONFIGURASI RNN/LSTM
+================================================================================
+               Model 1\n(Simple LSTM) Model 2\n(Deep LSTM+GRU) Model 3\n(BiLSTM ts=90)
+Aspek                                                                                 
+Tipe Layer                       LSTM               LSTM + GRU                  BiLSTM
+Jumlah Layer                   2 LSTM           2 LSTM + 1 GRU    2 Bidirectional LSTM
+Units                          50, 50              128, 64, 32            50+50, 32+32
+Timestep                      60 hari                  60 hari                 90 hari
+Learning Rate                   0.001           0.001+ReduceLR         0.0005+ReduceLR
+ReduceLR                            ❌                        ✅                       ✅
+BatchNorm                           ❌                ✅ (Dense)                       ❌
+Epochs Dilatih                     21                       38                      14
+Best Val Loss                0.000946                 0.010756                0.002064
+MAE (USD)                       $1.33                    $5.31                   $2.04
+RMSE (USD)                      $1.64                    $5.53                   $2.42
+MAPE (%)                        2.22%                    8.83%                   3.34%
+R²                             0.8301                  -0.9320                  0.5825
+================================================================================
